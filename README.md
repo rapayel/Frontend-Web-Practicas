@@ -1,4 +1,4 @@
-#Práctica 1 - Descubriendo TypeScript
+# Práctica 1 - Descubriendo TypeScript
 
 
 # Paso 2: Escribir el error de JavaScript
