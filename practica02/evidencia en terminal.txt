@@ -1,0 +1,297 @@
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run revisar
+
+> practica02@1.0.0 revisar
+> tsc --noEmit
+
+src/index.ts:3:7 - error TS2820: Type '"ACTIVO"' is not assignable to type 'EstadoPrestamo'. Did you mean '"activo"'?
+
+3 const estadoInvalido: EstadoPrestamo = "ACTIVO";
+        ~~~~~~~~~~~~~~
+
+src/index.ts:3:7 - error TS6133: 'estadoInvalido' is declared but its value is never read.
+
+3 const estadoInvalido: EstadoPrestamo = "ACTIVO";
+        ~~~~~~~~~~~~~~
+
+
+Found 2 errors in the same file, starting at: src/index.ts:3
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run construir
+
+> practica02@1.0.0 construir
+> tsc
+
+src/index.ts:1:10 - error TS6133: 'EstadoPrestamo' is declared but its value is never read.
+
+1 import { EstadoPrestamo } from "./dominio/tipos.js";
+           ~~~~~~~~~~~~~~
+
+
+Found 1 error in src/index.ts:1
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run construir
+
+> practica02@1.0.0 construir
+> tsc
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr
+
+> practica02@1.0.0 correr
+> ts-node-esm src/index.ts
+
+C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\configuration.js:91
+    const { fileExists = ts.sys.fileExists, readFile = ts.sys.readFile, skipProject = index_1.DEFAULTS.skipProject, project = index_1.DEFAULTS.project, tsTrace = index_1.DEFAULTS.tsTrace, } = rawApiOptions;
+                                ^
+
+TypeError: Cannot read properties of undefined (reading 'fileExists')
+    at readConfig (C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\configuration.js:91:33)
+    at findAndReadConfig (C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\configuration.js:50:84)
+    at phase3 (C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\bin.js:254:67)
+    at bootstrap (C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\bin.js:47:30)
+    at Object.<anonymous> (C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\node_modules\ts-node\dist\child\child-entrypoint.js:23:21)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+
+Node.js v24.11.1
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm install -D tsx
+
+added 3 packages, removed 1 package, changed 3 packages, and audited 26 packages in 4s
+
+found 0 vulnerabilities
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr    
+
+> practica02@1.0.0 correr
+> tsx src/index.ts
+
+node:internal/modules/esm/resolve:274
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src\datos\cargador.js' imported from C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src\index.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:864:10)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:737:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:773:38)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at resolveBaseSync (file:///C:/Users/lagar/OneDrive/Documentos/GitHub/Frontend-Web-Practicas/practica02/node_modules/tsx/dist/register-SoqaU4rg.mjs:2:10932)
+    at resolveDirectorySync (file:///C:/Users/lagar/OneDrive/Documentos/GitHub/Frontend-Web-Practicas/practica02/node_modules/tsx/dist/register-SoqaU4rg.mjs:2:12238)
+    at resolveTsPathsSync (file:///C:/Users/lagar/OneDrive/Documentos/GitHub/Frontend-Web-Practicas/practica02/node_modules/tsx/dist/register-SoqaU4rg.mjs:2:13445)
+    at resolve (file:///C:/Users/lagar/OneDrive/Documentos/GitHub/Frontend-Web-Practicas/practica02/node_modules/tsx/dist/register-SoqaU4rg.mjs:2:15991) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Users/lagar/OneDrive/Documentos/GitHub/Frontend-Web-Practicas/practica02/src/datos/cargador.js'
+}
+
+Node.js v24.11.1
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> cd src
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src> cd datos
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src\datos> dir
+
+
+    Directorio: C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend
+    -Web-Practicas\practica02\src\datos
+
+
+Mode                 LastWriteTime         Length Name            
+----                 -------------         ------ ----            
+-a----          9/6/2026   9:17 AM           1811 cargardor.ts    
+-a----          9/6/2026   8:51 AM           1216 catalogo.json   
+
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src\datos> cd
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src\datos> cd..
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02\src> cd..
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr
+
+> practica02@1.0.0 correr
+> tsx src/index.ts
+
+--- RESULTADO DE LA ADUANA ---
+Libros cargados exitosamente: 9
+Registros descartados (mal formados): 1
+
+Catálogo limpio:
+[
+  {
+    id: 'L-001',
+    titulo: 'El Aleph',
+    autor: 'Jorge Luis Borges',
+    anio: 1949,
+    ejemplares: 2
+  },
+  {
+    id: 'L-002',
+    titulo: 'Pedro Páramo',
+    autor: 'Juan Rulfo',
+    anio: 1955,
+    ejemplares: 3
+  },
+  {
+    id: 'L-003',
+    titulo: 'Cien años de soledad',
+    autor: 'Gabriel García Márquez',
+    anio: 1967,
+    ejemplares: 1
+  },
+  {
+    id: 'L-004',
+    titulo: 'La región más transparente',
+    autor: 'Carlos Fuentes',
+    anio: 1958,
+    ejemplares: 2
+  },
+  {
+    id: 'L-005',
+    titulo: 'Balún Canán',
+    autor: 'Rosario Castellanos',
+    anio: 1957,
+    ejemplares: 1
+  },
+  {
+    id: 'L-006',
+    titulo: 'Como agua para chocolate',
+    autor: 'Laura Esquivel',
+    anio: 1989,
+    ejemplares: 4
+  },
+  {
+    id: 'L-007',
+    titulo: 'Los detectives salvajes',
+    autor: 'Roberto Bolaño',
+    anio: 1998,
+    ejemplares: 1
+  },
+  {
+    id: 'L-008',
+    titulo: 'Temporada de huracanes',
+    autor: 'Fernanda Melchor',
+    anio: 2017,
+    ejemplares: 2
+  },
+  {
+    id: 'L-009',
+    titulo: 'El libro sin páginas',
+    autor: 'Anónimo',
+    ejemplares: 1
+  }
+]
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run revisar
+
+> practica02@1.0.0 revisar
+> tsc --noEmit
+
+src/dominio/reglas.ts:91:13 - error TS2322: Type '"perdido"' is not assignable to type 'never'.
+
+91       const _exhaustivoCheck: never = estadoActual;
+               ~~~~~~~~~~~~~~~~
+
+
+Found 1 error in src/dominio/reglas.ts:91
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr
+
+> practica02@1.0.0 correr
+> tsx src/index.ts
+
+--- PRÉSTAMO REALIZADO ---
+{
+  id: 'P-1788708640647-124',
+  libroId: 'L-001',
+  fechaPrestamo: 2026-09-01T10:00:00.000Z,
+  fechaDevolucionEsperada: 2026-09-08T10:00:00.000Z,
+  estado: 'activo'
+}
+
+--- REVISIÓN CON FECHA FUTURA ---
+Estado del préstamo: vencido
+Multa calculada: $120 MXN
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr
+
+> practica02@1.0.0 correr
+> tsx src/index.ts
+
+=== SISTEMA DE BIBLIOTECA - MOSTRADOR ===
+[Aviso] Se descartaron 1 registros mal formados del catálogo.
+
+
+--- Menú Principal ---
+1. Mostrar catálogo con ejemplares disponibles
+2. Prestar un libro
+3. Calcular multa de un préstamo
+4. Salir
+
+Selecciona una opción: 1
+
+--- Catálogo de Libros Disponibles ---
+ID: L-001 | "El Aleph" - Jorge Luis Borges (1949) | Libres: 2/2
+ID: L-002 | "Pedro Páramo" - Juan Rulfo (1955) | Libres: 3/3
+ID: L-003 | "Cien años de soledad" - Gabriel García Márquez (1967) | Libres: 1/1
+ID: L-004 | "La región más transparente" - Carlos Fuentes (1958) | Libres: 2/2
+ID: L-005 | "Balún Canán" - Rosario Castellanos (1957) | Libres: 1/1
+ID: L-006 | "Como agua para chocolate" - Laura Esquivel (1989) | Libres: 4/4
+ID: L-007 | "Los detectives salvajes" - Roberto Bolaño (1998) | Libres: 1/1
+ID: L-008 | "Temporada de huracanes" - Fernanda Melchor (2017) | Libres: 2/2
+ID: L-009 | "El libro sin páginas" - Anónimo (S/A) | Libres: 1/1
+
+--- Menú Principal ---
+1. Mostrar catálogo con ejemplares disponibles
+2. Prestar un libro
+3. Calcular multa de un préstamo
+4. Salir
+
+Selecciona una opción: 2
+Ingresa el ID del libro a prestar (ej. L-001): L-001
+
+¡Préstamo registrado con éxito! ID del préstamo: P-1788709345435-363
+
+--- Menú Principal ---
+1. Mostrar catálogo con ejemplares disponibles
+2. Prestar un libro
+3. Calcular multa de un préstamo
+4. Salir
+
+Selecciona una opción: 3
+Ingresa el ID del préstamo a consultar: L-001
+Error: No se encontró ningún préstamo con el ID "L-001".
+
+--- Menú Principal ---
+1. Mostrar catálogo con ejemplares disponibles
+2. Prestar un libro
+3. Calcular multa de un préstamo
+4. Salir
+
+Selecciona una opción: 4
+
+Saliendo del programa... ¡Hasta luego!
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run revisar
+
+> practica02@1.0.0 revisar
+> tsc --noEmit
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run construir
+
+> practica02@1.0.0 construir
+> tsc
+
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> npm run correr   
+
+> practica02@1.0.0 correr
+> tsx src/index.ts
+
+=== SISTEMA DE BIBLIOTECA - MOSTRADOR ===
+[Aviso] Se descartaron 1 registros mal formados del catálogo.
+
+
+--- Menú Principal ---
+1. Mostrar catálogo con ejemplares disponibles
+2. Prestar un libro
+3. Calcular multa de un préstamo
+4. Salir
+
+Selecciona una opción: 4
+
+Saliendo del programa... ¡Hasta luego!
+PS C:\Users\lagar\OneDrive\Documentos\GitHub\Frontend-Web-Practicas\practica02> 

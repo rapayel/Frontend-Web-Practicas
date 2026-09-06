@@ -1,0 +1,21 @@
+{
+  "name": "practica02",
+  "version": "1.0.0",
+  "type": "module",
+ "scripts": {
+    "correr": "tsx src/index.ts",
+    "revisar": "tsc --noEmit",
+    "construir": "tsc",
+    "iniciar": "node dist/index.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/readline-sync": "^1.4.8",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.13",
+    "typescript": "^5.0.0"
+  }
+}
