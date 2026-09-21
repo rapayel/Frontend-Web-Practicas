@@ -1,0 +1,13 @@
+GET http://localhost:3000/clases
+
+GET http://localhost:3000/
+
+GET http://localhost:3000/clases
+
+POST http://localhost:3000/clases
+Content-Type: application/json
+
+{
+  "id": 3,
+  "nombre": "Pilates"
+}
