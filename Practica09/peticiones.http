@@ -1,0 +1,2 @@
+GET http://localhost:3000/clases
+Origin: http://localhost:5173

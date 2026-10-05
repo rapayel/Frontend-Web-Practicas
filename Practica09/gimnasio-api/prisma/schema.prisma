@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum EstadoInscripcion {
+  ACTIVA
+  CANCELADA
+  COMPLETADA
+}
+
+model Clase {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  descripcion String?   @db.Text
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  horarios    Horario[]
+
+  @@map("clase")
+}
+
+model Horario {
+  id           Int           @id @default(autoincrement())
+  dia          String
+  horaInicio   String        @map("hora_inicio")
+  horaFin      String        @map("hora_fin")
+  claseId      Int           @map("clase_id")
+  clase        Clase         @relation(fields: [claseId], references: [id])
+  inscripciones Inscripcion[]
+
+  @@map("horario")
+}
+
+model Miembro {
+  id           Int           @id @default(autoincrement())
+  nombre       String
+  email        String        @unique
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  inscripciones Inscripcion[]
+
+  @@map("miembro")
+}
+
+model Inscripcion {
+  id        Int               @id @default(autoincrement())
+  horarioId Int               @map("horario_id")
+  miembroId Int               @map("miembro_id")
+  estado    EstadoInscripcion @default(ACTIVA)
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime          @updatedAt @map("updated_at")
+
+  horario   Horario           @relation(fields: [horarioId], references: [id])
+  miembro   Miembro           @relation(fields: [miembroId], references: [id])
+
+  @@unique([horarioId, miembroId])
+  @@map("inscripcion")
+}
