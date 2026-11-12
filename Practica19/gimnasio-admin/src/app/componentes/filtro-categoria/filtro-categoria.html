@@ -1,0 +1,19 @@
+<div class="filtro" role="group" aria-label="Filtrar clases por categoría">
+  <button
+    type="button"
+    [class.activo]="activa === 'todas'"
+    (click)="seleccionar('todas')"
+  >
+    Todas
+  </button>
+
+  @for (cat of categorias; track cat) {
+    <button
+      type="button"
+      [class.activo]="activa === cat"
+      (click)="seleccionar(cat)"
+    >
+      {{ cat }}
+    </button>
+  }
+</div>

@@ -1,0 +1,74 @@
+<header class="barra">
+  <div class="barra__interior">
+    <a class="barra__marca" href="#">
+      <img src="/logo.svg" alt="Logo Gimnasio Titanes" />
+      <span>Gimnasio Titanes</span>
+    </a>
+    <span class="barra__etiqueta">Administración</span>
+  </div>
+</header>
+
+<main class="pagina">
+  <div class="encabezado">
+    <div>
+      <h1>Catálogo de clases</h1>
+      <p>Panel de administración · Práctica 19</p>
+    </div>
+  </div>
+
+  <section class="resumen">
+    <div class="resumen__dato">
+      <span class="resumen__numero">{{ totalClases() }}</span>
+      <span class="resumen__texto">Clases totales</span>
+    </div>
+    <div class="resumen__dato">
+      <span class="resumen__numero">{{ totalFuerza() }}</span>
+      <span class="resumen__texto">De fuerza</span>
+    </div>
+    <div class="resumen__dato">
+      <span class="resumen__numero">{{ totalCardio() }}</span>
+      <span class="resumen__texto">De cardio</span>
+    </div>
+    <div class="resumen__dato">
+      <span class="resumen__numero">{{ totalFlexibilidad() }}</span>
+      <span class="resumen__texto">De flexibilidad</span>
+    </div>
+  </section>
+
+  <app-filtro-categoria
+    [activa]="categoriaActiva()"
+    (cambiar)="cambiarCategoria($event)"
+  />
+
+  <div class="tablero">
+    <section class="rejilla">
+      @for (clase of clasesFiltradas(); track clase.id) {
+        <app-tarjeta-clase
+          [clase]="clase"
+          [activa]="claseSeleccionada()?.id === clase.id"
+          (seleccionar)="seleccionarClase($event)"
+        />
+      } @empty {
+        <p class="vacio">No hay clases en esta categoría.</p>
+      }
+    </section>
+
+    <aside class="tarjeta lateral">
+      @if (claseSeleccionada(); as sel) {
+        <img [src]="sel.imagen" [alt]="sel.nombre" />
+        <h2>{{ sel.nombre }}</h2>
+        <p>{{ sel.descripcion }}</p>
+        <div class="dato">
+          <span class="dato__clave">Categoría:</span>
+          <span class="dato__valor">{{ sel.categoria }}</span>
+        </div>
+        <div class="dato">
+          <span class="dato__clave">Duración:</span>
+          <span class="dato__valor">{{ sel.duracionMin }} min</span>
+        </div>
+      } @else {
+        <p class="vacio">Selecciona una clase para ver su detalle.</p>
+      }
+    </aside>
+  </div>
+</main>
