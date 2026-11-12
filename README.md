@@ -31,3 +31,7 @@
 ## Practica 17.
 
 ## Practica 18.
+
+## Practica 19.
+
+## Practica 20.

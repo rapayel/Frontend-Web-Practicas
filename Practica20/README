@@ -1,0 +1,11 @@
+# Práctica 20: Servicios con Signals, inject(), input() y output()
+
+## Ejercicio 1: El servicio del catálogo
+
+¿Qué diferencia hay entre un signal y un computed, y cuál se parece a useState y cuál a useMemo?
+  Un `signal` guarda un estado mutable que se puede leer y actualizar directamente mediante `.set()` o `.update()`, por lo que equivale a `useState` en React. En cambio, un `computed` es un valor derivado de solo lectura que se recalcula automáticamente solo cuando cambian las señales que utiliza dentro, por lo que equivale a `useMemo`.
+
+## Ejercicio 2: El filtro y el detalle
+
+¿Qué pasa si el filtro hace new Catalogo() en lugar de inject(Catalogo)?
+  Si el componente crea su propia instancia con `new Catalogo()`, tendría una copia aislada y privada de las señales en memoria en lugar de compartir el singleton provisto por Angular (`providedIn: 'root'`). Como resultado, al pulsar un botón de categoría cambiaría su propia instancia local pero la rejilla y el resumen en `App` nunca se enterarían ni se actualizarían.
